@@ -21,6 +21,53 @@
   },
   {
     "ContainingType": "Sportolo13b.Controllers.EredmenyController",
+    "Method": "PostEredmeny",
+    "RelativePath": "api/Eredmeny",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "eredmeny",
+        "Type": "Sportolo13b.Models.EredmenyDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Sportolo13b.Models.Eredmeny",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Sportolo13b.Controllers.EredmenyController",
+    "Method": "UpdateEredmeny",
+    "RelativePath": "api/Eredmeny",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "eredmeny",
+        "Type": "Sportolo13b.Models.EredmenyDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Sportolo13b.Controllers.EredmenyController",
     "Method": "DeleteEredmeny",
     "RelativePath": "api/Eredmeny",
     "HttpMethod": "DELETE",

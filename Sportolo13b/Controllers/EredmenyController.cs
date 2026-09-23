@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.HttpLogging;
 using Microsoft.AspNetCore.Mvc;
 using MySqlConnector;
 using Sportolo13b.Models;
@@ -21,7 +22,7 @@ namespace Sportolo13b.Controllers
 
             conn.Open();
 
-            string sql = $"SELECT * FROM eredmeny";
+            string sql = "SELECT * FROM eredmeny";
 
             var cmd = new MySqlCommand(sql, conn);
 
@@ -43,6 +44,59 @@ namespace Sportolo13b.Controllers
             conn.Close();
 
             return eredmenyek;
+        }
+
+        [HttpPost]
+        public Eredmeny PostEredmeny(EredmenyDTO eredmeny)
+        {
+            var conn = new MySqlConnection(connStr);
+
+            conn.Open();
+
+            var score = new Eredmeny
+            {
+                Competition = eredmeny.Competition,
+                Description = eredmeny.Description,
+                ResultTime = DateTime.Now,
+                SportoloId = eredmeny.SportoloId
+            };
+
+            var sql = $"INSERT INTO `eredmeny`(`Competition`, `Description`, `ResultTime`, `SportoloId`) VALUES (@competition,@description,@resultTime,@sportoloId)";
+
+            var cmd = new MySqlCommand(sql, conn);
+
+            cmd.Parameters.AddWithValue("@competition", score.Competition);
+            cmd.Parameters.AddWithValue("@description", score.Description);
+            cmd.Parameters.AddWithValue("@resultTime", score.ResultTime);
+            cmd.Parameters.AddWithValue("@sportoloId", score.SportoloId);
+            
+            cmd.ExecuteNonQuery();
+
+            conn.Close();
+
+            return score;
+        }
+
+        [HttpPut]
+        public object UpdateEredmeny(int id, EredmenyDTO eredmeny)
+        {
+            var conn = new MySqlConnection(connStr);
+
+            conn.Open();
+
+            var sql = $"UPDATE `eredmeny` SET `Competition`=@competition,`Description`=@description WHERE `Id` = @id";
+
+            var cmd = new MySqlCommand(sql, conn);
+
+            cmd.Parameters.AddWithValue("@competition", eredmeny.Competition);
+            cmd.Parameters.AddWithValue("@description", eredmeny.Description);
+            cmd.Parameters.AddWithValue("@id", id);
+
+            cmd.ExecuteNonQuery();
+
+            conn.Close();
+
+            return new { message = "Eredmeny sikeresen frissítve." };
         }
 
         [HttpDelete]
