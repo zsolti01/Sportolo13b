@@ -22,7 +22,7 @@ namespace Sportolo13b.Controllers
 
             conn.Open();
 
-            string sql = "SELECT `Id`, `Competition`, `Description`, `ResultTime`, `UpdateTime`, `SportoloId` FROM `eredmeny` WHERE 1";
+            string sql = $"SELECT `Id`, `Competition`, `Description`, `ResultTime`, `UpdateTime` FROM `eredmeny`";
 
             var cmd = new MySqlCommand(sql, conn);
 
@@ -36,9 +36,9 @@ namespace Sportolo13b.Controllers
                     Competition = dataReader.GetString(1),
                     Description = dataReader.GetString(2),
                     ResultTime = dataReader.GetDateTime(3),
-                    UpdateTime = dataReader.GetDateTime(4),
-                    SportoloId = dataReader.GetInt32(5)
+                    UpdateTime = dataReader.GetDateTime(4)
                 };
+                eredmenyek.Add(eredmeny);
             }
 
             conn.Close();
