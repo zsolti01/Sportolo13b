@@ -25,7 +25,7 @@ namespace Sportolo13b.Controllers
 
             var cmd = new MySqlCommand(sql, conn);
 
-            var dataReader = new cmd.ExecuteReader();
+            var dataReader = cmd.ExecuteReader();
 
             while (dataReader.Read())
             {
@@ -43,6 +43,26 @@ namespace Sportolo13b.Controllers
             conn.Close();
 
             return eredmenyek;
+        }
+
+        [HttpDelete]
+        public object DeleteEredmeny (int id)
+        {
+            var conn = new MySqlConnection(connStr);
+
+            conn.Open();
+
+            var sql = $"DELETE FROM `eredmeny` WHERE `Id` = @id";
+
+            var cmd = new MySqlCommand(sql, conn);
+
+            cmd.Parameters.AddWithValue(@"id", id);
+
+            cmd.ExecuteNonQuery();
+
+            conn.Close();
+
+            return new { message = "Eredmeny sikeresen törölve." };
         }
     }
 }
