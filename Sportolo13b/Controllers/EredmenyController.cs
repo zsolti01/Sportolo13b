@@ -22,7 +22,7 @@ namespace Sportolo13b.Controllers
 
             conn.Open();
 
-            string sql = "SELECT * FROM eredmeny";
+            string sql = "SELECT `Id`, `Competition`, `Description`, `ResultTime`, `UpdateTime`, `SportoloId` FROM `eredmeny` WHERE 1";
 
             var cmd = new MySqlCommand(sql, conn);
 
@@ -37,13 +37,41 @@ namespace Sportolo13b.Controllers
                     Description = dataReader.GetString(2),
                     ResultTime = dataReader.GetDateTime(3),
                     UpdateTime = dataReader.GetDateTime(4),
-                    SportoloId = dataReader.GetInt32(5),
+                    SportoloId = dataReader.GetInt32(5)
                 };
             }
 
             conn.Close();
 
             return eredmenyek;
+        }
+
+        [HttpGet("byId")]
+        public object ReadEredmenyById(int id)
+        {
+            var conn = new MySqlConnection(connStr);
+
+            conn.Open();
+
+            string sql = $"SELECT `Competition`, `Description` FROM `eredmeny` WHERE `Id` = @id";
+
+            var cmd = new MySqlCommand(sql, conn);
+
+            cmd.Parameters.AddWithValue("@id", id);
+
+            var dataReader = cmd.ExecuteReader();
+
+            dataReader.Read();
+
+            var eredmeny = new
+            {
+                Competition = dataReader.GetString(0),
+                Description = dataReader.GetString(1)
+            };
+
+            conn.Close();
+
+            return eredmeny;
         }
 
         [HttpPost]
@@ -58,16 +86,18 @@ namespace Sportolo13b.Controllers
                 Competition = eredmeny.Competition,
                 Description = eredmeny.Description,
                 ResultTime = DateTime.Now,
+                UpdateTime = DateTime.Now,
                 SportoloId = eredmeny.SportoloId
             };
 
-            var sql = $"INSERT INTO `eredmeny`(`Competition`, `Description`, `ResultTime`, `SportoloId`) VALUES (@competition,@description,@resultTime,@sportoloId)";
+            var sql = $"INSERT INTO `eredmeny`(`Competition`, `Description`, `ResultTime`, `UpdateTime`, `SportoloId`) VALUES (@competition,@description,@resultTime,@updateTime,@sportoloId)";
 
             var cmd = new MySqlCommand(sql, conn);
 
             cmd.Parameters.AddWithValue("@competition", score.Competition);
             cmd.Parameters.AddWithValue("@description", score.Description);
             cmd.Parameters.AddWithValue("@resultTime", score.ResultTime);
+            cmd.Parameters.AddWithValue("@updateTime", score.UpdateTime);
             cmd.Parameters.AddWithValue("@sportoloId", score.SportoloId);
             
             cmd.ExecuteNonQuery();

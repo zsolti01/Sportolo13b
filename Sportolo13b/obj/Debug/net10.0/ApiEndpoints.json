@@ -81,5 +81,21 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Sportolo13b.Controllers.EredmenyController",
+    "Method": "ReadEredmenyById",
+    "RelativePath": "api/Eredmeny/byId",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
   }
 ]
