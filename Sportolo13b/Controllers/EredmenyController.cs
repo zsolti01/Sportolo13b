@@ -22,7 +22,7 @@ namespace Sportolo13b.Controllers
 
             conn.Open();
 
-            string sql = $"SELECT `Id`, `Competition`, `Description`, `ResultTime`, `UpdateTime` FROM `eredmeny`";
+            string sql = $"SELECT * FROM `eredmeny`";
 
             var cmd = new MySqlCommand(sql, conn);
 

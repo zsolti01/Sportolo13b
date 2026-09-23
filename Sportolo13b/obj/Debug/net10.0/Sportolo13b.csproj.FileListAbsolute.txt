@@ -35,3 +35,40 @@ C:\Users\vecseizs\Desktop\26-27\BackEnd\Sportolo13b\Sportolo13b\obj\Debug\net10.
 C:\Users\vecseizs\Desktop\26-27\BackEnd\Sportolo13b\Sportolo13b\obj\Debug\net10.0\Sportolo13b.pdb
 C:\Users\vecseizs\Desktop\26-27\BackEnd\Sportolo13b\Sportolo13b\obj\Debug\net10.0\Sportolo13b.genruntimeconfig.cache
 C:\Users\vecseizs\Desktop\26-27\BackEnd\Sportolo13b\Sportolo13b\obj\Debug\net10.0\ref\Sportolo13b.dll
+C:\Users\Vécsei Zsolt\source\repos\Sportolo13b\Sportolo13b\bin\Debug\net10.0\appsettings.Development.json
+C:\Users\Vécsei Zsolt\source\repos\Sportolo13b\Sportolo13b\bin\Debug\net10.0\appsettings.json
+C:\Users\Vécsei Zsolt\source\repos\Sportolo13b\Sportolo13b\bin\Debug\net10.0\Sportolo13b.staticwebassets.endpoints.json
+C:\Users\Vécsei Zsolt\source\repos\Sportolo13b\Sportolo13b\bin\Debug\net10.0\Sportolo13b.exe
+C:\Users\Vécsei Zsolt\source\repos\Sportolo13b\Sportolo13b\bin\Debug\net10.0\Sportolo13b.deps.json
+C:\Users\Vécsei Zsolt\source\repos\Sportolo13b\Sportolo13b\bin\Debug\net10.0\Sportolo13b.runtimeconfig.json
+C:\Users\Vécsei Zsolt\source\repos\Sportolo13b\Sportolo13b\bin\Debug\net10.0\Sportolo13b.dll
+C:\Users\Vécsei Zsolt\source\repos\Sportolo13b\Sportolo13b\bin\Debug\net10.0\Sportolo13b.pdb
+C:\Users\Vécsei Zsolt\source\repos\Sportolo13b\Sportolo13b\bin\Debug\net10.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\Vécsei Zsolt\source\repos\Sportolo13b\Sportolo13b\bin\Debug\net10.0\Microsoft.OpenApi.dll
+C:\Users\Vécsei Zsolt\source\repos\Sportolo13b\Sportolo13b\bin\Debug\net10.0\MySqlConnector.dll
+C:\Users\Vécsei Zsolt\source\repos\Sportolo13b\Sportolo13b\bin\Debug\net10.0\Scalar.AspNetCore.dll
+C:\Users\Vécsei Zsolt\source\repos\Sportolo13b\Sportolo13b\obj\Debug\net10.0\Sportolo13b.csproj.AssemblyReference.cache
+C:\Users\Vécsei Zsolt\source\repos\Sportolo13b\Sportolo13b\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Users\Vécsei Zsolt\source\repos\Sportolo13b\Sportolo13b\obj\Debug\net10.0\Sportolo13b.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Vécsei Zsolt\source\repos\Sportolo13b\Sportolo13b\obj\Debug\net10.0\Sportolo13b.AssemblyInfoInputs.cache
+C:\Users\Vécsei Zsolt\source\repos\Sportolo13b\Sportolo13b\obj\Debug\net10.0\Sportolo13b.AssemblyInfo.cs
+C:\Users\Vécsei Zsolt\source\repos\Sportolo13b\Sportolo13b\obj\Debug\net10.0\Sportolo13b.csproj.CoreCompileInputs.cache
+C:\Users\Vécsei Zsolt\source\repos\Sportolo13b\Sportolo13b\obj\Debug\net10.0\Sportolo13b.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Vécsei Zsolt\source\repos\Sportolo13b\Sportolo13b\obj\Debug\net10.0\Sportolo13b.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Vécsei Zsolt\source\repos\Sportolo13b\Sportolo13b\obj\Debug\net10.0\Sportolo13b.sourcelink.json
+C:\Users\Vécsei Zsolt\source\repos\Sportolo13b\Sportolo13b\obj\Debug\net10.0\rjimswa.dswa.cache.json
+C:\Users\Vécsei Zsolt\source\repos\Sportolo13b\Sportolo13b\obj\Debug\net10.0\rjsmrazor.dswa.cache.json
+C:\Users\Vécsei Zsolt\source\repos\Sportolo13b\Sportolo13b\obj\Debug\net10.0\rjsmcshtml.dswa.cache.json
+C:\Users\Vécsei Zsolt\source\repos\Sportolo13b\Sportolo13b\obj\Debug\net10.0\scopedcss\bundle\Sportolo13b.styles.css
+C:\Users\Vécsei Zsolt\source\repos\Sportolo13b\Sportolo13b\obj\Debug\net10.0\staticwebassets.build.json
+C:\Users\Vécsei Zsolt\source\repos\Sportolo13b\Sportolo13b\obj\Debug\net10.0\staticwebassets.build.json.cache
+C:\Users\Vécsei Zsolt\source\repos\Sportolo13b\Sportolo13b\obj\Debug\net10.0\staticwebassets.development.json
+C:\Users\Vécsei Zsolt\source\repos\Sportolo13b\Sportolo13b\obj\Debug\net10.0\staticwebassets.build.endpoints.json
+C:\Users\Vécsei Zsolt\source\repos\Sportolo13b\Sportolo13b\obj\Debug\net10.0\swae.build.ex.cache
+C:\Users\Vécsei Zsolt\source\repos\Sportolo13b\Sportolo13b\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt
+C:\Users\Vécsei Zsolt\source\repos\Sportolo13b\Sportolo13b\obj\Debug\net10.0\Sportolo.29408BEC.Up2Date
+C:\Users\Vécsei Zsolt\source\repos\Sportolo13b\Sportolo13b\obj\Debug\net10.0\Sportolo13b.dll
+C:\Users\Vécsei Zsolt\source\repos\Sportolo13b\Sportolo13b\obj\Debug\net10.0\refint\Sportolo13b.dll
+C:\Users\Vécsei Zsolt\source\repos\Sportolo13b\Sportolo13b\obj\Debug\net10.0\Sportolo13b.pdb
+C:\Users\Vécsei Zsolt\source\repos\Sportolo13b\Sportolo13b\obj\Debug\net10.0\Sportolo13b.genruntimeconfig.cache
+C:\Users\Vécsei Zsolt\source\repos\Sportolo13b\Sportolo13b\obj\Debug\net10.0\ref\Sportolo13b.dll
