@@ -11,38 +11,32 @@ namespace Sportolo13b.Controllers
     {
         private readonly string connStr = "server=localhost;database=sportolo13b;uid=root;password=";
 
-        [HttpGet]
-        public List<Sportolo> GetSportolok()
+        [HttpGet("byid")]
+        public object GetSportolokById(int id)
         {
-            List<Sportolo> sportolok = new();
-
             var conn = new MySqlConnection(connStr);
 
             conn.Open();
 
-            var sql = "SELECT * FROM `sportolo`";
+            var sql = $"SELECT `name`, `email` FROM `sportolo` WHERE `id` = @id";
 
             var cmd = new MySqlCommand(sql, conn);
 
+            cmd.Parameters.AddWithValue("@id", id);
+
             var dataReader = cmd.ExecuteReader();
 
-            while (dataReader.Read())
+            dataReader.Read();
+
+            var sportolo = new
             {
-                var sportolo = new Sportolo
-                {
-                    id = dataReader.GetInt32(0),
-                    name = dataReader.GetString(1),
-                    email = dataReader.GetString(2),
-                    age = dataReader.GetInt32(3),
-                    password = dataReader.GetString(4),
-                    registrationTime = dataReader.GetDateTime(5)
-                };
-                sportolok.Add(sportolo);
-            }
+                Name = dataReader.GetString(0),
+                Email = dataReader.GetString(1)
+            };
 
             conn.Close();
 
-            return sportolok;
+            return sportolo;
         }
     }
 }
