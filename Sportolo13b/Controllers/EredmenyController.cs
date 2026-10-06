@@ -74,6 +74,93 @@ namespace Sportolo13b.Controllers
             return eredmeny;
         }
 
+        [HttpGet("bySportolo")]
+        public object GetEredmenyekBySportolo(int sportoloId)
+        {
+            var conn = new MySqlConnection(connStr);
+
+            conn.Open();
+
+            string sql = @"
+        SELECT 
+            sportolo.name,
+            eredmeny.Competition,
+            eredmeny.Description
+        FROM sportolo
+        INNER JOIN eredmeny ON sportolo.id = eredmeny.SportoloId
+        WHERE sportolo.id = @sportoloId";
+
+            var cmd = new MySqlCommand(sql, conn);
+
+            cmd.Parameters.AddWithValue("@sportoloId", sportoloId);
+
+            var eredmenyek = new List<object>();
+
+            var dataReader = cmd.ExecuteReader();
+
+            while (dataReader.Read())
+            {
+                eredmenyek.Add(new
+                {
+                    Name = dataReader.GetString(0),
+                    Competition = dataReader.GetString(1),
+                    Description = dataReader.GetString(2)
+                });
+            }
+
+            conn.Close();
+
+            return eredmenyek;
+        }
+
+        [HttpGet("count")]
+        public object GetEredmenyekCount()
+        {
+            var conn = new MySqlConnection(connStr);
+
+            conn.Open();
+
+            string sql = "SELECT COUNT(*) FROM eredmeny";
+
+            var cmd = new MySqlCommand(sql, conn);
+
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+            conn.Close();
+
+            return new
+            {
+                EredmenyekSzama = count
+            };
+        }
+
+        [HttpGet("countBySportolo")]
+        public object GetEredmenyekCountBySportolo(int sportoloId)
+        {
+            var conn = new MySqlConnection(connStr);
+
+            conn.Open();
+
+            string sql = @"
+        SELECT COUNT(*)
+        FROM eredmeny
+        WHERE SportoloId = @sportoloId";
+
+            var cmd = new MySqlCommand(sql, conn);
+
+            cmd.Parameters.AddWithValue("@sportoloId", sportoloId);
+
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+            conn.Close();
+
+            return new
+            {
+                SportoloId = sportoloId,
+                EredmenyekSzama = count
+            };
+        }
+
         [HttpPost]
         public Eredmeny PostEredmeny(EredmenyDTO eredmeny)
         {
